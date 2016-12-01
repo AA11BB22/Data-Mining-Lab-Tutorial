@@ -45,13 +45,12 @@ present$boyToGirlRatio <- present$boys/present$girls
 arbuthnot$boyToGirlRatio <- arbuthnot$boys/arbuthnot$girls
 
 par(mfrow = c(1, 2))
-plot(x = arbuthnot$year, y = arbuthnot$boyToGirlRatio, type = "l", ylim = c(1, 1.2), ylab = "", xlab = "")
+plot(x = arbuthnot$year, y = arbuthnot$boyToGirlRatio, type = "l", ylab = "", xlab = "")
 title("Arbuthnot")
-plot(x = present$year, y = present$boyToGirlRatio, type = "l", ylim = c(1, 1.2), ylab = "", xlab = "")
+plot(x = present$year, y = present$boyToGirlRatio, type = "l", ylab = "", xlab = "")
 title("Present")
 
-# Arbuthnot's observation holds, however in Arbuthnot's dataset, the signal flunctuates.
-# In Present's dataset, the signal can be seen decreasing linearly.
+# Arbuthnot's observation holds as both values didn't go below 1.
 
 
 # 4. In what year did we see the most total number of births in the U.S.?
