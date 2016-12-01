@@ -2,9 +2,6 @@
 source("http://www.openintro.org/stat/data/present.R")
 source("http://www.openintro.org/stat/data/arbuthnot.R")
 
-
-
-
 # 1. What years are included in this data set?
 #    What are the dimensions of the data frame and 
 #    what are the variable or column names?
@@ -12,7 +9,6 @@ source("http://www.openintro.org/stat/data/arbuthnot.R")
 unique(present$year)
 dim(present)
 colnames(present)
-
 
 
 # 2. How do these counts compare to Arbuthnot’s? Are they on a similar scale?
@@ -41,7 +37,6 @@ grid.arrange(plot2, plot1, ncol = 2)
 # both plots show that the number of boys is always higher than the girls.
 
 
-
 # 3. Make a plot that displays the boy-to-girl ratio for every year in the data set.
 #    What do you see? Does Arbuthnot’s observation about boys being born in greater proportion than girls hold up in the U.S.?
 #    Include the plot in your response.
@@ -59,7 +54,6 @@ title("Present")
 # In Present's dataset, the signal can be seen decreasing linearly.
 
 
-
 # 4. In what year did we see the most total number of births in the U.S.?
 
 getIndexOfMaxBirth <- function() {
@@ -75,8 +69,9 @@ getIndexOfMaxBirth <- function() {
     return(a)
 }
 
-presentMaxX <- present[getIndexOfMaxBirth(), "year"]
-presentMaxY <- present[getIndexOfMaxBirth(), "boys"] + present[getIndexOfMaxBirth(), "girls"]
+maxIndex <- getIndexOfMaxBirth()
+presentMaxX <- present[maxIndex, "year"]
+presentMaxY <- present[maxIndex, "boys"] + present[maxIndex, "girls"]
 
 par(mfrow = c(1, 1))
 plot(x = present$year, y = (present$boys + present$girls), type = "l", xlab = "Year", ylab = "Total Births")
