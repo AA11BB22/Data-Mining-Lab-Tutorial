@@ -48,7 +48,7 @@ data[which(data$Petal.Length %in% outlier.values), ]
 # 35           6.6         2.9           23         1.3 versicolor
 # 125         49.0        30.0           14         2.0     setosa
 
-# 28, the measurements in all columns is may not be in cm or wrong floating point
+# 28, the measurements in all columns may not be in cm or wrong floating point
 # 35, the measurement for Petal.Length may be missing floating point
 # 125, same reason as 28 except Petal.Width
 
