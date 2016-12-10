@@ -66,8 +66,8 @@ boxplot(x = data$Petal.Length)
 
 # Correcting
 library(deducorrect)
-E <- editmatrix("Petal.Width > 0")
-correctWithRules(E, data)
+E <- correctionRules(expression(if (is.na(Petal.Width) | Petal.Width < 0) Petal.Width <- NA))
+data <- correctWithRules(E, data)$corrected
 
 LE <- localizeErrors(E, data)
 data[apply(LE$adapt, 1, function(x) {if (sum(x) > 0) TRUE else FALSE}), "Petal.Width"] <- NA
